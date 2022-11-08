@@ -36,7 +36,7 @@ function Modal({ visible, onClose, finalResult }) {
           ${styles.whiteText} 
           pl-3
           `}>
-          <span className="font-bold">{finalResult}</span>
+          <span className="font-bold">{finalResult}/100</span>
           </p>
 
           </div>
@@ -44,7 +44,7 @@ function Modal({ visible, onClose, finalResult }) {
           ${styles.whiteText} 
           pl-3
           `}>
-          <span className="bold">Employees with score more than 15 are likely to 
+          <span className="bold">Employees with score more than 30 are likely to 
           leave their organizations. </span>
           </p>
             <button onClick={onClose} class="shadow bg-purple-500 hover:bg-purple-400 
