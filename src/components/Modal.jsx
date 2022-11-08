@@ -44,7 +44,7 @@ function Modal({ visible, onClose, finalResult }) {
           ${styles.whiteText} 
           pl-3
           `}>
-          <span className="bold">Employees with score more than 15 are not likely to 
+          <span className="bold">Employees with score more than 15 are likely to 
           leave their organizations. </span>
           </p>
             <button onClick={onClose} class="shadow bg-purple-500 hover:bg-purple-400 

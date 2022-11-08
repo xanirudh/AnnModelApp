@@ -175,63 +175,58 @@ const Form = ({handleShowModal}) => {
 
 
       }
-     manipulator(response);
+      console.log(response)
+     newManipulator(response);
   }
   console.log(errors);
 
 
-  const manipulator = (arr) => {
-    const newArr = arr.map((n) => {
-      return parseFloat(n)
-    })
-      newArr[0] = newArr[0] / 100;
-      newArr[1] = newArr[1] / 100;
-      const calStandDevi = standardDevi(newArr)
-      const calMean = mean(newArr)
 
-      const finalArr = newArr.map((n) => {
 
-        return (n-calMean) / calStandDevi
+  const newManipulator = (arr) => {
 
-      })
+    arr[0] = (parseFloat(arr[0]) / 100).toString();
+    arr[1] = (parseFloat(arr[1]) / 100).toString();
+
+    var apiUrl = `https://scalar-api.onrender.com/scale/?values=${arr[0]}/${arr[1]}/${arr[2]}/${arr[3]}/${arr[4]}/${arr[5]}/${arr[6]}/${arr[7]}/${arr[8]}/${arr[9]}/${arr[10]}/${arr[11]}/${arr[12]}/${arr[13]}/${arr[14]}/${arr[15]}/${arr[16]}/${arr[17]}`
+    
+    pullJson()
+
+    async function pullJson() {
+      const response = await fetch(apiUrl)
+      const responseData = await response.json()
+      const result = JSON.stringify(responseData,null,4)
+      console.log(result)
+      var parsedResult = JSON.parse(result)
+
+
+      const finalArr = [];
+      finalArr[0] = parseFloat(parsedResult.value_one);
+      finalArr[1] = parseFloat(parsedResult.value_two);
+      finalArr[2] = parseFloat(parsedResult.value_three);
+      finalArr[3] = parseFloat(parsedResult.value_four);
+      finalArr[4] = parseFloat(parsedResult.value_five);
+      finalArr[5] = parseFloat(parsedResult.value_six);
+      finalArr[6] = parseFloat(parsedResult.value_seven);
+      finalArr[7] = parseFloat(parsedResult.value_eight);
+      finalArr[8] = parseFloat(parsedResult.value_nine);
+      finalArr[9] = parseFloat(parsedResult.value_ten);
+      finalArr[10] = parseFloat(parsedResult.value_eleven);
+      finalArr[11] = parseFloat(parsedResult.value_twelve);
+      finalArr[12] = parseFloat(parsedResult.value_thirteen);
+      finalArr[13] = parseFloat(parsedResult.value_fourteen);
+      finalArr[14] = parseFloat(parsedResult.value_fifteen);
+      finalArr[15] = parseFloat(parsedResult.value_sixteen);
+      finalArr[16] = parseFloat(parsedResult.value_seventeen);
+      finalArr[17] = parseFloat(parsedResult.value_eighteen);
 
       predict(finalArr)
       
+    }
+       
+      
   }
-
-  const newManipulator = (arr) => {
-    
-  }
   
-function standardDevi(arr){
-  // Creating the mean with Array.reduce
-  let mean = arr.reduce((acc, curr)=>{
-    return acc + curr
-  }, 0) / arr.length;
-   
-  // Assigning (value - mean) ^ 2 to every array item
-  arr = arr.map((k)=>{
-    return (k - mean) ** 2
-  })
-   
-  // Calculating the sum of updated array
- let sum = arr.reduce((acc, curr)=> acc + curr, 0);
-  
- // Calculating the variance
- let variance = sum / arr.length
-  
- // Returning the Standered deviation
- return Math.sqrt(sum / arr.length)
-}
-
-function mean(arr){
-  // Creating the mean with Array.reduce
-  let mean = arr.reduce((acc, curr)=>{
-    return acc + curr
-  }, 0) / arr.length;
-
-  return mean
-}
 
 
   async function predict(arr){
