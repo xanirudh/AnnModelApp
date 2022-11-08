@@ -198,6 +198,10 @@ const Form = ({handleShowModal}) => {
       predict(finalArr)
       
   }
+
+  const newManipulator = (arr) => {
+    
+  }
   
 function standardDevi(arr){
   // Creating the mean with Array.reduce

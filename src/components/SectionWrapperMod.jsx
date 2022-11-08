@@ -22,6 +22,10 @@ const FeatureCard = ({ iconUrl, iconText }) => (
 const SectionWrapperMod = ({ title, description, techDescription, showBtn,
 mockupImg, banner, reverse, handleShowModal }) => {
 
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   
   return (
     
@@ -72,7 +76,7 @@ mockupImg, banner, reverse, handleShowModal }) => {
       text-center
       `}>
         
-        <button className={styles.btnPrimary}>
+        <button onClick={() => openInNewTab('https://github.com/xanirudh/AnnModelApp')} className={styles.btnPrimary}>
           Source Code
         </button>
         

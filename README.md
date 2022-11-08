@@ -1,10 +1,10 @@
-# ProNef App ShowCase Landing Page
+# Artificial Neural Network App
 
-This is modern landing page designed for ProNef App.\
-[Click here view ProNef App Github Repo](https://github.com/xanirudh/ProNefNftApp).\
-It is a single page website designed for showcasing the\
-features and deails of ProNef project.\
+This is ANN Predictor App based on Keras API and uses\ tensorflow.\
+The App predicts employee retention rates based on\
+deatils provided.\
 This website is built using React.\
+This website uses various API's and flask backend.\
 This website is hosted over decentralized network.\
 **The website is successfully hosted on decentralized network and can be used using the following link:**
-[Click here to go to the website!](https://dawn-wildflower-4050.on.fleek.co).
+[Click here to go to the website!](https://damp-tooth-0524.on.fleek.co).
