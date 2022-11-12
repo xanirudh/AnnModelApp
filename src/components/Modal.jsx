@@ -22,12 +22,12 @@ function Modal({ visible, onClose, finalResult }) {
     items-center">
       <>
         <div className={` p-10 rounded bg-indigo-600
-        flex flex-col`}>
+        flex flex-col items-center`}>
           <h1 className={`${styles.h1Text} 
           ${styles.whiteText}
           `}>ANN Results </h1>
 
-          <div className='flex flex-row'>
+          <div className='flex flex-row items-center mt-3'>
 
             <div style={{ width: "200px" }} className={`p-3`}>
 
@@ -57,7 +57,7 @@ function Modal({ visible, onClose, finalResult }) {
                 }}
               </VisibilitySensor>
             </div>
-
+              <div className={`ml-7 flex items-center`}>
             <p className={`${styles.pText} 
           ${styles.whiteText}
           `}>
@@ -70,6 +70,7 @@ function Modal({ visible, onClose, finalResult }) {
           `}>
               <span className="font-bold">{finalResult}/100</span>
             </p>
+            </div>
 
           </div>
           <p className={`${styles.pText} 
