@@ -7,36 +7,36 @@ import Form from './Form';
 
 
 const FeatureCard = ({ iconUrl, iconText }) => (
-    <div
+  <div
     className={styles.featureCard}
-    >
-      <img 
+  >
+    <img
       src={iconUrl}
       alt="icon"
       className={styles.featureImg}
-      />
-      <p className={styles.featureText}>{iconText}</p>
-      </div>
-  )
+    />
+    <p className={styles.featureText}>{iconText}</p>
+  </div>
+)
 
 const SectionWrapperMod = ({ title, description, techDescription, showBtn,
-mockupImg, banner, reverse, handleShowModal }) => {
+  mockupImg, banner, reverse, handleShowModal }) => {
 
   const openInNewTab = url => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  
+
   return (
-    
-      
+
+
     <div className={`min-h-screen ${styles.
       section} 
-      ${ reverse ? styles.bgWhite : styles.bgPrimary} 
+      ${reverse ? styles.bgWhite : styles.bgPrimary} 
       ${banner}`}>
 
       <div className={`flex items-center 
-      ${ reverse ? styles.boxReverseClass : styles.boxClass} 
+      ${reverse ? styles.boxReverseClass : styles.boxClass} 
       w-11/12 sm:w-full minmd:w-3/4`}>
 
         <div className={`${styles.descDiv} 
@@ -44,69 +44,69 @@ mockupImg, banner, reverse, handleShowModal }) => {
           ${reverse ? styles.textRight : styles.textLeft}
           `}>
 
-            <h1 className={`
+          <h1 className={`
             ${reverse ? styles.blackText : styles.whiteText}
             ${styles.h1Text}`}>
-              {title}</h1>
+            {title}</h1>
 
-              <p className={`
+          <p className={`
               ${reverse ? styles.blackText : styles.whiteText}
               ${styles.descriptionText}`}>
-                {description}</p>
+            {description}</p>
 
-                <p className={`
+          <p className={`
               ${reverse ? styles.blackText : styles.whiteText}
               ${styles.descriptionText}`}>
-                {techDescription}</p>
+            {techDescription}</p>
 
-                <h1 className={`${styles.h1Text} 
+          <h1 className={`${styles.h1Text} 
           ${styles.whiteText}
           `}>
             Technologies Used</h1>
 
-            <div className={styles.flexWrap}>
-          <FeatureCard iconUrl={assets.keras} 
-            iconText="Keras" />
-          <FeatureCard iconUrl={assets.tensorflow} 
-            iconText="TensorFlow" />
-            
-        </div>
-        <div className={`${styles.subSection} 
+          <div className={styles.flexWrap}>
+            <FeatureCard iconUrl={assets.keras}
+              iconText="Keras" />
+            <FeatureCard iconUrl={assets.tensorflow}
+              iconText="TensorFlow" />
+
+          </div>
+          <div className={`${styles.subSection} 
       flex-col
       text-center
       `}>
-        
-        <button onClick={() => openInNewTab('https://github.com/xanirudh/AnnModelApp')} className={styles.btnPrimary}>
-          Source Code
-        </button>
-        
-        </div>
 
-              {showBtn && (
-                <Button 
-                assetUrl={assets.expo}
-                link="https://expo.dev/@aniru.dh/react_native_app?serviceType=classic&distribution=expo-go"
-                />
-              )}
+            <button onClick={() => openInNewTab('https://github.com/xanirudh/AnnModelApp')} className={styles.btnPrimary}>
+              Source Code
+            </button>
+
+          </div>
+
+          {showBtn && (
+            <Button
+              assetUrl={assets.expo}
+              link="https://expo.dev/@aniru.dh/react_native_app?serviceType=classic&distribution=expo-go"
+            />
+          )}
         </div>
 
         <div className={`flex-1 ${styles.flexCenter}
          p-8 sm:px-0`}>
-            <div className={`${ reverse ? " fadeLeftMini" : " fadeRightMini"}`}>
-            
-            <Form handleShowModal={handleShowModal}/>
-            
-    
-            
-        </div>
+          <div className={`${reverse ? " fadeLeftMini" : " fadeRightMini"}`}>
+
+            <Form handleShowModal={handleShowModal} />
+
+
+
+          </div>
 
         </div>
-        
+
       </div>
-      
+
     </div>
-    
-    
+
+
   )
 }
 
